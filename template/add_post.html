@@ -1,0 +1,20 @@
+{% extends "baze.html" %}
+
+{% block content %}
+
+   <form action="/add_post/" method="POST" style="display: block; background-color: beige; margin: 30px; padding: 30px">
+
+       <div style="padding: 20px; margin: 20px; display: block">
+           <p>Заголовок</p>
+           <input type="text" name="title" style="display: block">
+       </div>
+       <div style="padding: 20px; margin: 20px; display: block">
+           <p>Текст поста</p>
+           <textarea rows="4" cols="50" type="text" name="text" value="Input blog text" style="display: block"></textarea>
+       </div>
+       <a href="/" style="display: block; margin: 30px; padding: 30px"><input type="submit" value="Submit"></a>
+   </form>
+
+
+
+{% endblock %}

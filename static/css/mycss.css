@@ -1,0 +1,14 @@
+#my_nav {
+    background-color: #5a6268;
+    height: 50px;
+    margin-bottom: 30px
+}
+#nav_icon {
+    height: 45px;
+    width: 45px
+}
+#nav_add_post_link {
+    font-size: 110%;
+    alignment: center;
+    color: white
+}
