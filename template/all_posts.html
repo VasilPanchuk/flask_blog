@@ -3,11 +3,24 @@
 {% block content %}
 
 
-
-    {% for p in posts %}
-     <h2>{{ p.title }}</h2>
-     <p>{{ p.text }}</p>
-    {% endfor %}
+    <div class="container-fluid">
+       <div class="row">
+        <div class="col-9">
+            {% for p in posts %}
+         <div class="card bg-light" style="margin-bottom: 10px; border: none">
+              <div class="card-body">
+                  <h5 class="card-title">{{ p.title }}</h5>
+                  <p class="card-text" style="padding-left: 20px"><small class="text-muted">Додано {{ p.date_created }}</small></p>
+                  <p class="card-text">{{ p.text }}</p>
+              </div>
+         </div>
+            {% endfor %}
+        </div>
+         <div class="col-3">
+             <img src="/static/imgs/banner.jpg">
+         </div>
+       </div>
+    </div>
 
 
 {% endblock %}
