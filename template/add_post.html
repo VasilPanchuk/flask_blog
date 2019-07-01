@@ -2,8 +2,11 @@
 
 {% block content %}
 
-   <h2>Додайте новий пост</h2>
 
+
+   <div class="card bg-light shadow-lg p-3 mb-5 bg-white rounded" style="border: none; margin-top: 0">
+              <div class="card-body">
+   <h2 style="margin-top: 10px">Додайте новий пост</h2>
    <form action="/add_post/" method="POST" style="margin-top: 40px">
       <div class="form-group">
         <label for="exampleFormControlInput1">Заголовок поста</label>
@@ -15,6 +18,9 @@
       </div>
       <a href="/"><button type="submit" class="btn btn-dark">Опублікувати</button></a>
     </form>
+
+              </div>
+   </div>
 
 
 

@@ -2,25 +2,42 @@
 
 {% block content %}
 
-      <h5 class="card-title">{{ post.post.title }}</h5>
-      <p class="card-text" style="padding-left: 20px"><small class="text-muted">Додано {{ post.post.date_created }}</small></p>
-      <p class="card-text">{{ post.post.text }}</p>
-      <h6 class="card-title" style="margin-top: 20px">Коментарі:</h6>
-      {% for c in post.comments %}
-      <p>{{ c.date_created }}:  {{ c.text_comment }}</p>
-      {% endfor %}
+      <div class="card bg-light shadow-lg p-3 mb-5 bg-white rounded" style="border: none; margin-top: 0">
+              <div class="card-body">
+                 <h5 class="card-title">{{ post.post.title }}</h5>
+                  <p class="card-text" style="padding-left: 20px">
+                        <small class="text-muted">Додано {{ post.post.date_created }}</small></p>
+                  <p class="card-text">{{ post.post.text }}</p>
+                  <h6 class="card-title" style="margin-top: 20px">Коментарі:</h6>
 
-      <form action="/add_comment/" method="POST" style="margin-top: 10px">
-            <div class="form-group">
+                   <div style="margin-left: 20px">
+                    {% for c in post.comments %}
+                                  <small class="text-muted">{{ c.date_created }}</small>
 
-                  <div class="form-group">
-                    <label for="exampleFormControlInput1">Добавте коментар</label>
-                    <textarea class="form-control" id="exampleFormControlInput1" rows="2" name="text_comment"></textarea>
-                  </div>
-                  <input type="text" name="post_id" value={{post.post.id}} hidden="hidden">
+                                  <p class="text-muted"> {{ c.text_comment }} </p>
 
-            <a href="/view_post/{{post.post.id}}"><button type="submit" class="btn btn-dark">добавити</button></a>
-            </div>
-       </form>
+                    {% endfor %}
+
+
+                  <form action="/add_comment/" method="POST" style="margin-top: 10px">
+                        <div class="form-group">
+
+                              <div class="form-group">
+                                <label for="exampleFormControlInput1">Добавте коментар</label>
+                                <textarea class="form-control" id="exampleFormControlInput1" rows="2"
+                                          name="text_comment"></textarea>
+                              </div>
+                              <input type="text" name="post_id" value={{post.post.id}} hidden="hidden">
+
+                              <a href="/view_post/{{post.post.id}}"><button type="submit" class="btn btn-dark">добавити</button></a>
+                        </div>
+                  </form>
+                         </div>
+
+              </div>
+         </div>
+
+
+
 
 {% endblock %}
