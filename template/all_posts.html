@@ -11,7 +11,7 @@
               <div class="card-body">
                   <h5 class="card-title">{{ p.title }}</h5>
                   <p class="card-text" style="padding-left: 20px"><small class="text-muted">Додано {{ p.date_created }}</small></p>
-                  <p class="card-text">{{ p.text }}</p>
+                  <p class="card-text">{{ p.text }} <a href="/view_post/{{p.id}}"> {{ p.str_end }} </a> </p>
               </div>
          </div>
             {% endfor %}
