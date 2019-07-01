@@ -2,18 +2,19 @@
 
 {% block content %}
 
-   <form action="/add_post/" method="POST" style="display: block; background-color: beige; margin: 30px; padding: 30px">
+   <h2>Додайте новий пост</h2>
 
-       <div style="padding: 20px; margin: 20px; display: block">
-           <p>Заголовок</p>
-           <input type="text" name="title" style="display: block">
-       </div>
-       <div style="padding: 20px; margin: 20px; display: block">
-           <p>Текст поста</p>
-           <textarea rows="4" cols="50" type="text" name="text" value="Input blog text" style="display: block"></textarea>
-       </div>
-       <a href="/" style="display: block; margin: 30px; padding: 30px"><input type="submit" value="Submit"></a>
-   </form>
+   <form action="/add_post/" method="POST" style="margin-top: 40px">
+      <div class="form-group">
+        <label for="exampleFormControlInput1">Заголовок поста</label>
+        <input type="text" class="form-control" id="exampleFormControlInput1" name="title">
+      </div>
+      <div class="form-group">
+        <label for="exampleFormControlInput2">Текст поста</label>
+        <textarea class="form-control" id="exampleFormControlInput2" rows="7" name="text"></textarea>
+      </div>
+      <a href="/"><button type="submit" class="btn btn-dark">Опублікувати</button></a>
+    </form>
 
 
 
